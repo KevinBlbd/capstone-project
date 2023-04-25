@@ -1,20 +1,4 @@
-import { createGlobalStyle } from "styled-components";
-
-export default createGlobalStyle`
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    font-family: system-ui;
-  }
-
-  /* __________________ not necessary */
-
-  .card {
+.card {
   width: 70%;
   padding: 20px;
   margin-inline: auto;
@@ -43,6 +27,3 @@ export default createGlobalStyle`
 .app > li {
   list-style: none;
 }
-
-
-`;
