@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useState, useEffect } from "react";
 import Card from "./Card";
 
 const StyleNoneList = styled.li`

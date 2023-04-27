@@ -1,7 +1,5 @@
 import styled from "styled-components";
-// import { useState, useEffect } from "react";
 import Gallery from "@/components/Gallery";
-import Card from "@/components/Card";
 
 const StyleGallery = styled.div`
   display: flex;
@@ -32,5 +30,4 @@ export default function HomePage() {
       </StyleGallery>
     </div>
   );
-  <Card />;
 }
