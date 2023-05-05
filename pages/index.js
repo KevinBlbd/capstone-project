@@ -10,6 +10,7 @@ import {
 } from "@/components/StyleMain";
 import { uid } from "uid";
 import { pieces } from "/components/pieces";
+import { StyledButton, StyledOpenFormButton } from "@/components/StyledButton";
 
 export default function HomePage() {
   const [modalIsVisible, setModalIsVisible] = useState(false);
@@ -32,9 +33,9 @@ export default function HomePage() {
       <StyleGallery>
         <Gallery piece={piece} />
       </StyleGallery>
-      <button type="button" onClick={handleModalIsVisible}>
+      <StyledOpenFormButton type="button" onClick={handleModalIsVisible}>
         +
-      </button>
+      </StyledOpenFormButton>
 
       {modalIsVisible && (
         <StylePopup>

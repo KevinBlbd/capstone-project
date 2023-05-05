@@ -47,3 +47,7 @@ export const StyledModal = styled.div`
   border-radius: 2rem;
   max-height: 200px;
 `;
+
+// export const StyledButton = styled.button`
+//   position: fixed;
+// `;

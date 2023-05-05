@@ -10,3 +10,17 @@ export const StyledButton = styled.button`
   border: none;
   font-size: inherit;
 `;
+
+export const StyledOpenFormButton = styled.button`
+  background-color: lightblue;
+  padding: 1.6rem;
+  border-radius: 2.3rem;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  font-size: inherit;
+  position: flex;
+  margin-left: 22rem;
+  margin-top: -2rem;
+`;
