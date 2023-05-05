@@ -3,6 +3,11 @@ import styled from "styled-components";
 export const StyleGallery = styled.div`
   display: flex;
   justify-content: center;
+  /* padding-left: 0px; */
+`;
+
+export const Gallery = styled.ul`
+  padding-left: 0;
 `;
 
 export const StyleHeader = styled.h1`

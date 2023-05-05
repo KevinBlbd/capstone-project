@@ -4,11 +4,16 @@ import { pieces } from "../pieces";
 
 const StyleNoneList = styled.li`
   list-style: none;
+  padding-left: 0rem;
+  margin: 0;
+`;
+const StyleList = styled.ul`
+  padding-left: 0;
 `;
 
 export default function Gallery({ piece }) {
   return (
-    <ul className="gallery">
+    <StyleList className="gallery">
       {piece.map((piece) => {
         return (
           <StyleNoneList key={piece.id}>
@@ -21,6 +26,6 @@ export default function Gallery({ piece }) {
           </StyleNoneList>
         );
       })}
-    </ul>
+    </StyleList>
   );
 }

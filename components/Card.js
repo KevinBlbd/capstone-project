@@ -4,7 +4,7 @@ import Image from "next/image";
 const StyleImage = styled(Image)`
   border-radius: 15px;
   margin-top: 1rem;
-  margin-left: -1rem;
+  margin-left: 0rem;
   @media screen and (max-width: 768px) {
     margin-bottom: 0rem;
   }

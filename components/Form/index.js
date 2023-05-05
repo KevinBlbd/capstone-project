@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { StyledButton } from "../StyledButton.js";
-import { useState } from "react";
-import { useRouter } from "next/router";
+// import { useState } from "react";
+// import { useRouter } from "next/router";
 
 const FormContainer = styled.form`
   display: grid;
@@ -28,13 +28,13 @@ const Label = styled.label`
 `;
 
 export default function Form({ formName, defaultData, onAddPiece }) {
-  const router = useRouter();
+  // const router = useRouter();
   function handleSubmit(event) {
     event.preventDefault();
 
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
-    onAddPiece(data);
+    // const formData = new FormData(event.target);
+    // const data = Object.fromEntries(formData);
+    // onAddPiece(data);
     // router.push("/");
     // onCloseModal();
   }
