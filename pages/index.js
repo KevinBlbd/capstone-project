@@ -1,33 +1,49 @@
 import styled from "styled-components";
+import { useState } from "react";
 import Gallery from "@/components/Gallery";
-
-const StyleGallery = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const StyleHeader = styled.h1`
-  margin-top: 0rem;
-  margin-left: 0rem;
-  font-size: 20px;
-  text-align: center;
-`;
-
-const StyleAround = styled.p`
-  margin-top: 2rem;
-  margin-left: 2rem;
-  margin-bottom: 0rem;
-  font-weight: bold;
-`;
+import Form from "@/components/Form/index.js";
+import {
+  StyleGallery,
+  StyleHeader,
+  StyleAround,
+  StylePopup,
+} from "@/components/StyleMain";
+import { uid } from "uid";
+import { pieces } from "/components/pieces";
 
 export default function HomePage() {
+  const [modalIsVisible, setModalIsVisible] = useState(false);
+  const [piece, setPiece] = useState(pieces);
+
+  function handleModalIsVisible() {
+    setModalIsVisible(!modalIsVisible);
+  }
+
+  function handleAddPiece(newPiece) {
+    setPiece([...piece, { ...newPiece, id: uid() }]);
+    // }
+    // function handleCloseModal() {
+    setModalIsVisible();
+  }
   return (
     <div>
       <StyleHeader>Street Art Gallery</StyleHeader>
       <StyleAround> Around me</StyleAround>
       <StyleGallery>
-        <Gallery />
+        <Gallery piece={piece} />
       </StyleGallery>
+      <button type="button" onClick={handleModalIsVisible}>
+        +
+      </button>
+
+      {modalIsVisible && (
+        <StylePopup>
+          <Form onAddPiece={handleAddPiece} onClick={handleModalIsVisible} />
+          {""}
+        </StylePopup>
+      )}
     </div>
   );
 }
+
+// onCloseModal={handleCloseModal}
