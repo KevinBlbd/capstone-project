@@ -28,7 +28,7 @@ export const StyleAround = styled.p`
 export const StylePopup = styled.div`
   position: fixed;
   inset: 10vh 10vw;
-  background-color: lightgray;
+  background-color: lightgrey;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,6 +46,12 @@ export const StyledModal = styled.div`
   justify-content: center;
   border-radius: 2rem;
   max-height: 200px;
+`;
+
+export const StyleDetail = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 // export const StyledButton = styled.button`

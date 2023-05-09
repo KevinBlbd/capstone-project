@@ -15,6 +15,6 @@ export default function Card({ id, location, type, image }) {
     /* --- to show details of the pictures on the homepage (location, type) uncomment ----
         {id} {location} {type} */
 
-    <StyleImage src={image} alt="sample image" width="300" height="120" />
+    <StyleImage src={image} alt="sample image" width="340" height="120" />
   );
 }

@@ -1,6 +1,6 @@
+import Link from "next/link";
 import styled from "styled-components";
 import Card from "../Card";
-import { pieces } from "../pieces";
 
 const StyleNoneList = styled.li`
   list-style: none;
@@ -17,12 +17,16 @@ export default function Gallery({ piece }) {
       {piece.map((piece) => {
         return (
           <StyleNoneList key={piece.id}>
-            <Card
-              id={piece.id}
-              location={piece.location}
-              type={piece.type}
-              image={piece.image}
-            />
+            <Link href={`/picture/${piece.id}`}>
+              <div>
+                <Card
+                  id={piece.id}
+                  location={piece.location}
+                  type={piece.type}
+                  image={piece.image}
+                />
+              </div>
+            </Link>
           </StyleNoneList>
         );
       })}

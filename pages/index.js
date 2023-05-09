@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { useState } from "react";
 import Gallery from "@/components/Gallery";
 import Form from "@/components/Form/index.js";
@@ -22,9 +21,8 @@ export default function HomePage() {
 
   function handleAddPiece(newPiece) {
     setPiece([...piece, { ...newPiece, id: uid() }]);
-    // }
-    // function handleCloseModal() {
     setModalIsVisible();
+    console.log(setPiece);
   }
   return (
     <div>
