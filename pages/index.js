@@ -1,3 +1,4 @@
+import { uid } from "uid";
 import { useState } from "react";
 import Gallery from "@/components/Gallery";
 import Form from "@/components/Form/index.js";
@@ -7,29 +8,28 @@ import {
   StyleAround,
   StylePopup,
 } from "@/components/StyleMain";
-import { uid } from "uid";
-import { pieces } from "/components/pieces";
-import { StyledButton, StyledOpenFormButton } from "@/components/StyledButton";
 
-export default function HomePage() {
+import { StyledOpenFormButton } from "@/components/StyledButton";
+import { data } from "@/components/data";
+
+export default function HomePage({ piece, setPiece, setNewPieces, newPieces }) {
   const [modalIsVisible, setModalIsVisible] = useState(false);
-  const [piece, setPiece] = useState(pieces);
 
   function handleModalIsVisible() {
     setModalIsVisible(!modalIsVisible);
   }
 
   function handleAddPiece(newPiece) {
-    setPiece([...piece, { ...newPiece, id: uid() }]);
+    setNewPieces([...data, { ...newPiece, id: uid() }]);
     setModalIsVisible();
-    console.log(setPiece);
   }
+
   return (
     <div>
       <StyleHeader>Street Art Gallery</StyleHeader>
       <StyleAround> Around me</StyleAround>
       <StyleGallery>
-        <Gallery piece={piece} />
+        <Gallery newPieces={newPieces} />
       </StyleGallery>
       <StyledOpenFormButton type="button" onClick={handleModalIsVisible}>
         +
@@ -44,5 +44,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-// onCloseModal={handleCloseModal}

@@ -1,20 +1,20 @@
 import { useRouter } from "next/router";
-import { pieces } from "/components/pieces";
+import { data } from "@/components/data";
 import Image from "next/image";
 import { StyledBackLink } from "@/components/StyledButton";
 import { StyleDetail } from "@/components/StyleMain";
 
-export default function PictureDetail() {
+export default function PictureDetail({ newPieces }) {
   const router = useRouter();
   const { id } = router.query;
-  const picture = pieces.find((piece) => piece.id === id);
+  const picture = newPieces.find((piece) => piece.id === id);
 
   if (!picture) {
     return <div>Picture not found</div>;
   }
-  function handleBack() {
-    router.push("/");
-  }
+  // function handleBack() {
+  //   router.push("/");
+  // }
 
   return (
     <>

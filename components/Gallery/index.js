@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 import Card from "../Card";
+import { data } from "../data";
 
 const StyleNoneList = styled.li`
   list-style: none;
@@ -11,10 +12,10 @@ const StyleList = styled.ul`
   padding-left: 0;
 `;
 
-export default function Gallery({ piece }) {
+export default function Gallery({ newPieces }) {
   return (
     <StyleList className="gallery">
-      {piece.map((piece) => {
+      {newPieces.map((piece) => {
         return (
           <StyleNoneList key={piece.id}>
             <Link href={`/picture/${piece.id}`}>

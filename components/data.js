@@ -1,4 +1,4 @@
-export const pieces = [
+export const data = [
   {
     id: "1",
     location: "Hamburg",
