@@ -1,7 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
 import Card from "../Card";
-import { data } from "../data";
 
 const StyleNoneList = styled.li`
   list-style: none;

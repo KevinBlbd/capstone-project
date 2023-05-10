@@ -53,7 +53,3 @@ export const StyleDetail = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-
-// export const StyledButton = styled.button`
-//   position: fixed;
-// `;

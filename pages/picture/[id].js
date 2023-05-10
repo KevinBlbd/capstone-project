@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import { data } from "@/components/data";
 import Image from "next/image";
 import { StyledBackLink } from "@/components/StyledButton";
 import { StyleDetail } from "@/components/StyleMain";
@@ -12,13 +11,9 @@ export default function PictureDetail({ newPieces }) {
   if (!picture) {
     return <div>Picture not found</div>;
   }
-  // function handleBack() {
-  //   router.push("/");
-  // }
 
   return (
     <>
-      {/* <StyledBackButton onClick={handleBack}>Back</StyledBackButton> */}
       <StyledBackLink href="/">Back</StyledBackLink>
       <StyleDetail>
         <Image

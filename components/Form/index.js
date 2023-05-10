@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { StyledButton } from "../StyledButton.js";
-import { useState } from "react";
-import { useRouter } from "next/router";
 
 const FormContainer = styled.form`
   display: grid;
