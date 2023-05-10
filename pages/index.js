@@ -10,9 +10,8 @@ import {
 } from "@/components/StyleMain";
 
 import { StyledOpenFormButton } from "@/components/StyledButton";
-import { data } from "@/components/data";
 
-export default function HomePage({ piece, setPiece, setNewPieces, newPieces }) {
+export default function HomePage({ setNewPieces, newPieces }) {
   const [modalIsVisible, setModalIsVisible] = useState(false);
 
   function handleModalIsVisible() {
@@ -20,7 +19,7 @@ export default function HomePage({ piece, setPiece, setNewPieces, newPieces }) {
   }
 
   function handleAddPiece(newPiece) {
-    setNewPieces([...data, { ...newPiece, id: uid() }]);
+    setNewPieces((prevPieces) => [...prevPieces, { ...newPiece, id: uid() }]);
     setModalIsVisible();
   }
 
