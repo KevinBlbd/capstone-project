@@ -43,14 +43,6 @@ export default function Form({ formName, defaultData, onAddPiece }) {
         defaultValue={defaultData?.image}
         required
       />
-      <Label htmlFor="location">Location</Label>
-      <Input
-        id="location"
-        name="location"
-        type="text"
-        defaultValue={defaultData?.location}
-        required
-      />
       <Label htmlFor="name">Artist name</Label>
       <Input
         id="artist name"
@@ -59,6 +51,15 @@ export default function Form({ formName, defaultData, onAddPiece }) {
         defaultValue={defaultData?.name}
         required
       />
+      <Label htmlFor="location">Location</Label>
+      <Input
+        id="location"
+        name="location"
+        type="text"
+        defaultValue={defaultData?.location}
+        required
+      />
+
       <Label htmlFor="type">Type of piece</Label>
       <Input
         name="type"

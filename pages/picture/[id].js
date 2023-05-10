@@ -22,10 +22,9 @@ export default function PictureDetail({ newPieces }) {
           src={picture.image}
           alt={picture.location}
         />
-        <h2>artist name : {picture.artistName}</h2>
+        <h2>artist name : {picture.name}</h2>
         <p>location : {picture.location}</p>
         <p>type : {picture.type}</p>
-        <p>{picture.name}</p>
       </StyleDetail>
     </>
   );
