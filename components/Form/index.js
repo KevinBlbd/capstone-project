@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { StyledButton } from "../StyledButton.js";
-import { useState } from "react";
-import { useRouter } from "next/router";
 
 const FormContainer = styled.form`
   display: grid;
@@ -28,17 +26,13 @@ const Label = styled.label`
 `;
 
 export default function Form({ formName, defaultData, onAddPiece }) {
-  const router = useRouter();
   function handleSubmit(event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
     onAddPiece(data);
-    // router.push("/");
-    // onCloseModal();
   }
-
   return (
     <FormContainer aria-labelledby={formName} onSubmit={handleSubmit}>
       <Label htmlFor="image-url">Image Url</Label>
@@ -49,14 +43,6 @@ export default function Form({ formName, defaultData, onAddPiece }) {
         defaultValue={defaultData?.image}
         required
       />
-      <Label htmlFor="location">Location</Label>
-      <Input
-        id="location"
-        name="location"
-        type="text"
-        defaultValue={defaultData?.location}
-        required
-      />
       <Label htmlFor="name">Artist name</Label>
       <Input
         id="artist name"
@@ -65,13 +51,15 @@ export default function Form({ formName, defaultData, onAddPiece }) {
         defaultValue={defaultData?.name}
         required
       />
-      {/* <Label htmlFor="map-url">Map Url</Label>
-        <Input
-          id="map-url"
-          name="mapURL"
-          type="text"
-          defaultValue={defaultData?.mapURL}
-        /> */}
+      <Label htmlFor="location">Location</Label>
+      <Input
+        id="location"
+        name="location"
+        type="text"
+        defaultValue={defaultData?.location}
+        required
+      />
+
       <Label htmlFor="type">Type of piece</Label>
       <Input
         name="type"
@@ -79,7 +67,7 @@ export default function Form({ formName, defaultData, onAddPiece }) {
         type="text"
         defaultValue={defaultData?.type}
         required
-      ></Input>
+      />
       <StyledButton type="submit">Add</StyledButton>
     </FormContainer>
   );

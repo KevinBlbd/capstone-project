@@ -1,26 +1,35 @@
+import Link from "next/link";
 import styled from "styled-components";
 import Card from "../Card";
-import { pieces } from "../pieces";
 
 const StyleNoneList = styled.li`
   list-style: none;
+  padding-left: 0rem;
+  margin: 0;
+`;
+const StyleList = styled.ul`
+  padding-left: 0;
 `;
 
-export default function Gallery({ piece }) {
+export default function Gallery({ newPieces }) {
   return (
-    <ul className="gallery">
-      {piece.map((piece) => {
+    <StyleList className="gallery">
+      {newPieces.map((piece) => {
         return (
           <StyleNoneList key={piece.id}>
-            <Card
-              id={piece.id}
-              location={piece.location}
-              type={piece.type}
-              image={piece.image}
-            />
+            <Link href={`/picture/${piece.id}`}>
+              <div>
+                <Card
+                  id={piece.id}
+                  location={piece.location}
+                  type={piece.type}
+                  image={piece.image}
+                />
+              </div>
+            </Link>
           </StyleNoneList>
         );
       })}
-    </ul>
+    </StyleList>
   );
 }
