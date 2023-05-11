@@ -2,30 +2,18 @@ import styled from "styled-components";
 import { StyledButton } from "../StyledButton.js";
 
 const FormContainer = styled.form`
-  display: grid;
-  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 `;
 
-const Input = styled.input`
-  padding: 0.5rem;
-  font-size: inherit;
-  border: 3px solid black;
-  width: 100%;
-  border-radius: 0.5rem;
-`;
-
-const Textarea = styled.textarea`
-  font-family: inherit;
-  border: 3px solid black;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-`;
+const Input = styled.input``;
 
 const Label = styled.label`
-  font-weight: bold;
+  font-weight: ;
 `;
 
-export default function Form({ formName, defaultData, onAddPiece }) {
+export default function Form({ formName, defaultData, onAddPiece, onClick }) {
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -35,7 +23,7 @@ export default function Form({ formName, defaultData, onAddPiece }) {
   }
   return (
     <FormContainer aria-labelledby={formName} onSubmit={handleSubmit}>
-      <Label htmlFor="image-url">Image Url</Label>
+      <Label htmlFor="image-url">IMAGE URL</Label>
       <Input
         id="image-url"
         name="image"
@@ -43,15 +31,15 @@ export default function Form({ formName, defaultData, onAddPiece }) {
         defaultValue={defaultData?.image}
         required
       />
-      <Label htmlFor="name">Artist name</Label>
+      <Label htmlFor="name">ARTIST</Label>
       <Input
         id="artist name"
-        name="name"
+        name="artistName"
         type="text"
-        defaultValue={defaultData?.name}
+        defaultValue={defaultData?.artistName}
         required
       />
-      <Label htmlFor="location">Location</Label>
+      <Label htmlFor="location">LOCATION</Label>
       <Input
         id="location"
         name="location"
@@ -60,7 +48,7 @@ export default function Form({ formName, defaultData, onAddPiece }) {
         required
       />
 
-      <Label htmlFor="type">Type of piece</Label>
+      <Label htmlFor="type">TYPE</Label>
       <Input
         name="type"
         id="type"
@@ -69,6 +57,7 @@ export default function Form({ formName, defaultData, onAddPiece }) {
         required
       />
       <StyledButton type="submit">Add</StyledButton>
+      <StyledButton onClick={onClick}>Cancel</StyledButton>
     </FormContainer>
   );
 }

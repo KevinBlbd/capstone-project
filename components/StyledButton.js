@@ -1,41 +1,48 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Link from "next/link";
 
 export const StyledButton = styled.button`
-  background-color: lightgreen;
-  padding: 0.8rem;
-  border-radius: 0.6rem;
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
+  appearance: none;
   border: none;
-  font-size: inherit;
+  background-color: darkviolet;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  color: white;
+  align-self: flex-end;
 `;
 
 export const StyledOpenFormButton = styled.button`
-  background-color: lightblue;
+  position: fixed;
+  bottom: 0;
+  right: 20px;
   padding: 1.6rem;
-  border-radius: 2.3rem;
-  color: black;
+  background: transparent;
+  color: ${({ modalIsVisible }) => (modalIsVisible ? "#00ff21" : "#f900ff")};
   text-decoration: none;
   font-weight: bold;
   border: none;
-  font-size: inherit;
-  position: flex;
+  font-size: 10rem;
   margin-left: 22rem;
   margin-top: 0rem;
+  text-shadow: ${({ modalIsVisible }) =>
+    modalIsVisible
+      ? "3px 3px 0px #f900ff, 5px 5px 0px yellow"
+      : "3px 3px 0px #00ff21, 5px 5px 0px yellow"};
+
+  &:hover {
+    color: #00ff21;
+    transform: scale(1.3);
+    text-shadow: 3px 3px 0px #f900ff, 5px 5px 0px yellow;
+  }
 `;
 
 export const StyledBackLink = styled(Link)`
-  background-color: lightblue;
-  padding: 1.6rem;
-  border-radius: 2.3rem;
-  color: black;
+  position: fixed;
+  color: #f900ff;
   text-decoration: none;
   font-weight: bold;
   border: none;
-  font-size: inherit;
-  position: flex;
-  margin-left: 0rem;
-  margin-top: 0rem;
+  font-size: 3rem;
+  text-shadow: 5px 0px 0px #00ff21, 7px 0px 0px yellow, 12px 0px 0px cyan,
+    5px 5px 10px black;
 `;
