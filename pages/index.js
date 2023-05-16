@@ -44,7 +44,7 @@ export default function HomePage({ setNewPieces, newPieces }) {
         />
       </div>
       <StyleGallery>
-        <StyleTitle>///////////////////////</StyleTitle>
+        <StyleTitle>`///////////////////////`</StyleTitle>
 
         <Gallery newPieces={newPieces} />
       </StyleGallery>
