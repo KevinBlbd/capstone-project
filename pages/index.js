@@ -5,10 +5,13 @@ import Form from "@/components/Form/index.js";
 import {
   StyleGallery,
   StyleHeader,
-  StyleAround,
   StylePopup,
   Backdrop,
+  StyleTitle,
 } from "@/components/StyleMain";
+import newImage from "@/public/newh.png";
+import logo from "@/public/streetart5.png";
+import Image from "next/image";
 
 import { StyledOpenFormButton } from "@/components/StyledButton";
 
@@ -20,21 +23,29 @@ export default function HomePage({ setNewPieces, newPieces }) {
   }
 
   function handleAddPiece(newPiece) {
-    setNewPieces((prevPieces) => [...prevPieces, { ...newPiece, id: uid() }]);
+    setNewPieces((prevPieces) => [{ ...newPiece, id: uid() }, ...prevPieces]);
     setModalIsVisible(false);
   }
-
-  // function handleDeletePiece(idToRemove) {
-  //   setPiece(data.filter((x) => x.id !== idToRemove));
-  //   router.push("/");
-  // }
-
   return (
     <div>
-      <StyleHeader>STREET ART// gallery</StyleHeader>
-
+      <div style={{ textAlign: "center" }}>
+        <Image
+          src={logo}
+          alt="new"
+          style={{ display: "inline-block", width: "60%", height: "60%" }}
+        />
+        <StyleHeader>GALLERY</StyleHeader>
+      </div>
+      <div>
+        <Image
+          src={newImage}
+          alt="new"
+          style={{ display: "inline-block", width: "25%", height: "25%" }}
+        />
+      </div>
       <StyleGallery>
-        <StyleAround>new</StyleAround>
+        <StyleTitle>///////////////////////</StyleTitle>
+
         <Gallery newPieces={newPieces} />
       </StyleGallery>
       <StyledOpenFormButton
@@ -56,5 +67,3 @@ export default function HomePage({ setNewPieces, newPieces }) {
     </div>
   );
 }
-
-// handleDeletePiece={handleDeletePiece}

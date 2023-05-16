@@ -4,11 +4,13 @@ import Link from "next/link";
 export const StyledButton = styled.button`
   appearance: none;
   border: none;
-  background-color: darkviolet;
+  background-color: #cc14e3;
   width: fit-content;
   padding: 0.5rem 1rem;
   color: white;
+  font-size: 0.8rem;
   align-self: flex-end;
+  font-family: "Gill Sans";
 `;
 
 export const StyledOpenFormButton = styled.button`
@@ -43,6 +45,19 @@ export const StyledBackLink = styled(Link)`
   font-weight: bold;
   border: none;
   font-size: 3rem;
-  text-shadow: 5px 0px 0px #00ff21, 7px 0px 0px yellow, 12px 0px 0px cyan,
-    5px 5px 10px black;
+  text-shadow: 2px 2px 0px #00ff21, 4px 4px 0px yellow, 5px 5px 10px black;
+`;
+
+export const StyledDropdown = styled.select`
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #f5f5f5;
+  color: #333;
+  margin-right: 1rem;
+`;
+
+export const StyledDropdownOption = styled.option`
+  font-size: 1rem;
 `;

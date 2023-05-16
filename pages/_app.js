@@ -4,7 +4,6 @@ import { data } from "@/components/data";
 
 export default function App({ Component, pageProps, onAddPiece }) {
   const [newPieces, setNewPieces] = useState(data);
-  // const [piece, setPiece] = useState(data);
 
   return (
     <>
@@ -14,8 +13,6 @@ export default function App({ Component, pageProps, onAddPiece }) {
         onAddPiece={onAddPiece}
         newPieces={newPieces}
         setNewPieces={setNewPieces}
-        // piece={piece}
-        // setPiece={setPiece}
       />
     </>
   );

@@ -1,7 +1,11 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { StyledBackLink, StyledButton } from "@/components/StyledButton";
-import { StyleDetail } from "@/components/StyleMain";
+import {
+  StyleDetail,
+  detailInfos,
+  detailInfosImp,
+} from "@/components/StyleMain";
 import styled from "styled-components";
 
 const StyledImage = styled(Image)`
@@ -27,9 +31,9 @@ export default function PictureDetail({ newPieces, handleDeletePiece }) {
           src={picture.image}
           alt={picture.location}
         />
-        <p>artist name : {picture.artistName}</p>
-        <p>location : {picture.location}</p>
-        <p>type : {picture.type}</p>
+        <detailInfos>Artist name: {picture.artistName}</detailInfos>
+        <detailInfos>location: {picture.location}</detailInfos>
+        <detailInfos>type: {picture.type}</detailInfos>
       </StyleDetail>
     </>
   );

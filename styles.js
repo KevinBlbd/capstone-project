@@ -12,5 +12,6 @@ export default createGlobalStyle`
     margin: 0;
     font-family: system-ui;
     /* background-color: #2F3640; */
-    background-image: linear-gradient(to bottom, #2F3640, #2F2F40);
+    background-image: linear-gradient(to bottom, #2F2F40, #2F3640);
+
   }`;

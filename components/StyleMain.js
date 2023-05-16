@@ -7,18 +7,20 @@ export const StyleGallery = styled.div`
 `;
 
 export const StyleHeader = styled.h1`
-  margin-top: 0rem;
+  margin-top: -0.5rem;
   margin-left: 0rem;
-  font-size: 3rem;
+  font-size: 2rem;
   font-family: "Gill Sans";
   text-align: center;
-  color: yellow;
-  text-shadow: 2px 2px 0px #00ff21, 5px 5px 0px #f900ff;
+  color: #cc14e3;
+  text-shadow: 1px 1px 0px yellow, -1px -1px 0px cyan;
 `;
 
-export const StyleAround = styled.p`
+export const StyleTitle = styled.p`
   color: #00ff21;
-  background: #f900ff;
+  background: #cc14e3;
+  background-size: 100%;
+
   width: 50%;
   align-self: flex-start;
   font-size: 1.5rem;
@@ -33,27 +35,21 @@ export const StylePopup = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  inset: 10vh 10vw;
+  inset: 23vh 10vw;
   background-color: #171f26;
   color: #00ff21;
   border: 3px dashed #00ff21;
 `;
 
-// export const StyledModal = styled.div`
-//   position: fixed;
-//   inset: 10vh 10vw;
-//   background-color: black;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   border-radius: 0rem;
-//   max-height: 2000px;
-// `;
-
 export const StyleDetail = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1.5rem;
+  font-family: "Gill Sans";
+  color: #cc14e3;
+  padding: 0rem;
+  padding-bottom: 6rem;
 `;
 
 export const Backdrop = styled.div`
@@ -63,5 +59,21 @@ export const Backdrop = styled.div`
   width: 100vw;
   height: 100vh;
   background: black;
-  opacity: 0.7;
+  opacity: 0.5;
+`;
+
+export const detailInfos = styled.p`
+  padding: 8rem;
+  font-family: "Gill Sans";
+  font-size: 1.5rem;
+`;
+
+export const detailInfosImp = styled.p`
+  padding: 0.5rem;
+  font-size: 2rem;
+  color: #8423fa;
+`;
+
+export const formStyle = styled.label`
+  font-family: "Gill Sans";
 `;

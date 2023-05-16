@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { StyledButton } from "../StyledButton.js";
+import { StyledDropdown, StyledDropdownOption } from "../StyledButton";
+import { formStyle } from "../StyleMain.js";
 
 const FormContainer = styled.form`
   display: flex;
@@ -10,7 +12,7 @@ const FormContainer = styled.form`
 const Input = styled.input``;
 
 const Label = styled.label`
-  font-weight: ;
+  font-weight: bold;
 `;
 
 export default function Form({ formName, defaultData, onAddPiece, onClick }) {
@@ -23,7 +25,7 @@ export default function Form({ formName, defaultData, onAddPiece, onClick }) {
   }
   return (
     <FormContainer aria-labelledby={formName} onSubmit={handleSubmit}>
-      <Label htmlFor="image-url">IMAGE URL</Label>
+      <formStyle htmlFor="image-url">IMAGE URL</formStyle>
       <Input
         id="image-url"
         name="image"
@@ -31,7 +33,7 @@ export default function Form({ formName, defaultData, onAddPiece, onClick }) {
         defaultValue={defaultData?.image}
         required
       />
-      <Label htmlFor="name">ARTIST</Label>
+      <formStyle htmlFor="name">ARTIST</formStyle>
       <Input
         id="artist name"
         name="artistName"
@@ -39,7 +41,7 @@ export default function Form({ formName, defaultData, onAddPiece, onClick }) {
         defaultValue={defaultData?.artistName}
         required
       />
-      <Label htmlFor="location">LOCATION</Label>
+      <formStyle htmlFor="location">LOCATION</formStyle>
       <Input
         id="location"
         name="location"
@@ -48,16 +50,16 @@ export default function Form({ formName, defaultData, onAddPiece, onClick }) {
         required
       />
 
-      <Label htmlFor="type">TYPE</Label>
-      <Input
-        name="type"
-        id="type"
-        type="text"
-        defaultValue={defaultData?.type}
-        required
-      />
-      <StyledButton type="submit">Add</StyledButton>
-      <StyledButton onClick={onClick}>Cancel</StyledButton>
+      <formStyle htmlFor="type">TYPE</formStyle>
+      <StyledDropdown id="type" name="type">
+        <StyledDropdownOption value="graffiti">Graffiti</StyledDropdownOption>
+        <StyledDropdownOption value="collage">Collage</StyledDropdownOption>
+        <StyledDropdownOption value="tag">Tag</StyledDropdownOption>
+        <StyledDropdownOption value="stencil">Stencil</StyledDropdownOption>
+      </StyledDropdown>
+
+      <StyledButton type="submit">ADD</StyledButton>
+      <StyledButton onClick={onClick}>CANCEL</StyledButton>
     </FormContainer>
   );
 }
