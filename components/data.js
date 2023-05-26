@@ -2,32 +2,80 @@ export const data = [
   {
     id: "1",
     location: "Hamburg",
-    type: "tag",
+    type: "Tag",
     artistName: "Cope2",
     image:
-      "https://images.unsplash.com/photo-1547417584-12db672469b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
+      "https://upload.wikimedia.org/wikipedia/commons/0/08/Revok_MSK_AWR_SeventhLetter_VA_LosAngeles_Graffiti_Art.jpg",
   },
   {
     id: "2",
     location: "Paris",
-    type: "stencil",
+    type: "Stencil",
     artistName: "Banksy",
     image:
-      "https://images.unsplash.com/photo-1600941039083-f75f3e8de948?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80",
-  },
-  {
-    id: "3",
-    location: "Berlin",
-    type: "graffiti",
-    artistName: "Futura2000",
-    image:
-      "https://images.unsplash.com/photo-1529956918443-5713f44f247f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Z3JhZmZ8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
+      "https://upload.wikimedia.org/wikipedia/commons/8/8b/Chelsea_Street_Art.jpg",
   },
   {
     id: "4",
     location: "Barcelona",
-    type: "collage",
+    type: "Collage",
+    artistName: "Swoon",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/3/3c/Mural_by_Fefe_Talavera_in_East_Atlanta.jpg",
+  },
+  {
+    id: "5",
+    location: "Paris",
+    type: "Stencil",
+    artistName: "Banksy",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c2/Graffiti_in_Yogyakarta%2C_Indonesia.jpg",
+  },
+  {
+    id: "6",
+    location: "Paris",
+    type: "Stencil",
+    artistName: "OsGemeos",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/8/87/Os_G%C3%AAmeos.jpg",
+  },
+  {
+    id: "7",
+    location: "Barcelona",
+    type: "Collage",
+    artistName: "Swoon",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/b/be/Graffiti_Per%C3%BA.jpg",
+  },
+  {
+    id: "9",
+    location: "Barcelona",
+    type: "Collage",
     artistName: "Swoon",
     image: "https://upload.wikimedia.org/wikipedia/commons/3/31/Swoon.JPG",
+  },
+  {
+    id: "10",
+    location: "Barcelona",
+    type: "Stencil",
+    artistName: "Banksy",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/7/7f/Shop_Until_You_Drop_by_Banksy.JPG",
+  },
+  {
+    id: "11",
+    location: "Barcelona",
+    type: "Collage",
+    artistName: "Swoon",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/4/4b/2007_011_CES_Schelling_Monsters.jpg",
+  },
+  {
+    id: "12",
+    location: "Barcelona",
+    type: "Collage",
+    artistName: "Swoon",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/0/01/El_Bocho_Citizens_Hamburg.jpg",
   },
 ];

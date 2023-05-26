@@ -4,11 +4,11 @@ import Card from "../Card";
 
 const StyleNoneList = styled.li`
   list-style: none;
-  padding-left: 0rem;
-  margin: 0;
 `;
 const StyleList = styled.ul`
-  padding-left: 0;
+  padding: 0;
+  margin: 0;
+  /* border: 3px dashed #00ff21; */
 `;
 
 export default function Gallery({ newPieces }) {

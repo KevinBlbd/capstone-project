@@ -1,9 +1,18 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { StyledBackLink } from "@/components/StyledButton";
-import { StyleDetail } from "@/components/StyleMain";
+import { StyledBackLink, StyledButton } from "@/components/StyledButton";
+import {
+  StyleDetail,
+  detailInfos,
+  detailInfosImp,
+} from "@/components/StyleMain";
+import styled from "styled-components";
 
-export default function PictureDetail({ newPieces }) {
+const StyledImage = styled(Image)`
+  object-fit: cover;
+`;
+
+export default function PictureDetail({ newPieces, handleDeletePiece }) {
   const router = useRouter();
   const { id } = router.query;
   const picture = newPieces.find((piece) => piece.id === id);
@@ -14,17 +23,17 @@ export default function PictureDetail({ newPieces }) {
 
   return (
     <>
-      <StyledBackLink href="/">Back</StyledBackLink>
+      <StyledBackLink href="/">←</StyledBackLink>
       <StyleDetail>
-        <Image
-          width={300}
-          height={300}
+        <StyledImage
+          width={375}
+          height={500}
           src={picture.image}
           alt={picture.location}
         />
-        <h2>artist name : {picture.name}</h2>
-        <p>location : {picture.location}</p>
-        <p>type : {picture.type}</p>
+        <detailInfos>Artist name: {picture.artistName}</detailInfos>
+        <detailInfos>location: {picture.location}</detailInfos>
+        <detailInfos>type: {picture.type}</detailInfos>
       </StyleDetail>
     </>
   );

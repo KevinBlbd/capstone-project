@@ -1,31 +1,21 @@
 import styled from "styled-components";
 import { StyledButton } from "../StyledButton.js";
+import { StyledDropdown, StyledDropdownOption } from "../StyledButton";
+import { formStyle } from "../StyleMain.js";
 
 const FormContainer = styled.form`
-  display: grid;
-  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 `;
 
-const Input = styled.input`
-  padding: 0.5rem;
-  font-size: inherit;
-  border: 3px solid black;
-  width: 100%;
-  border-radius: 0.5rem;
-`;
-
-const Textarea = styled.textarea`
-  font-family: inherit;
-  border: 3px solid black;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-`;
+const Input = styled.input``;
 
 const Label = styled.label`
   font-weight: bold;
 `;
 
-export default function Form({ formName, defaultData, onAddPiece }) {
+export default function Form({ formName, defaultData, onAddPiece, onClick }) {
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -35,7 +25,7 @@ export default function Form({ formName, defaultData, onAddPiece }) {
   }
   return (
     <FormContainer aria-labelledby={formName} onSubmit={handleSubmit}>
-      <Label htmlFor="image-url">Image Url</Label>
+      <formStyle htmlFor="image-url">IMAGE URL</formStyle>
       <Input
         id="image-url"
         name="image"
@@ -43,15 +33,15 @@ export default function Form({ formName, defaultData, onAddPiece }) {
         defaultValue={defaultData?.image}
         required
       />
-      <Label htmlFor="name">Artist name</Label>
+      <formStyle htmlFor="name">ARTIST</formStyle>
       <Input
         id="artist name"
-        name="name"
+        name="artistName"
         type="text"
-        defaultValue={defaultData?.name}
+        defaultValue={defaultData?.artistName}
         required
       />
-      <Label htmlFor="location">Location</Label>
+      <formStyle htmlFor="location">LOCATION</formStyle>
       <Input
         id="location"
         name="location"
@@ -60,15 +50,16 @@ export default function Form({ formName, defaultData, onAddPiece }) {
         required
       />
 
-      <Label htmlFor="type">Type of piece</Label>
-      <Input
-        name="type"
-        id="type"
-        type="text"
-        defaultValue={defaultData?.type}
-        required
-      />
-      <StyledButton type="submit">Add</StyledButton>
+      <formStyle htmlFor="type">TYPE</formStyle>
+      <StyledDropdown id="type" name="type">
+        <StyledDropdownOption value="graffiti">Graffiti</StyledDropdownOption>
+        <StyledDropdownOption value="collage">Collage</StyledDropdownOption>
+        <StyledDropdownOption value="tag">Tag</StyledDropdownOption>
+        <StyledDropdownOption value="stencil">Stencil</StyledDropdownOption>
+      </StyledDropdown>
+
+      <StyledButton type="submit">ADD</StyledButton>
+      <StyledButton onClick={onClick}>CANCEL</StyledButton>
     </FormContainer>
   );
 }
